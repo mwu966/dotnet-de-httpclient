@@ -9,14 +9,14 @@ namespace http_console
     class MyHttpRepuest
     {
 
-        public String URL { get; private set; }
-        public String Base64Credential { get; set; }
-        public HttpMethod HttpSendMethod { get; set; }
+        public string URL { get; private set; }
+        public string Base64Credential { get; private set; }
+        public HttpMethod HttpSendMethod { get; private set; }
 
-        private static HttpClient httpClient = new HttpClient();
+        private static readonly HttpClient httpClient = new HttpClient();
 
 
-        public async Task<String> InputInfomation(String mode)
+        public async Task<string> InputInfomation(string mode)
         {
 
             Console.WriteLine("URLを入力");

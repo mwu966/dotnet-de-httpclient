@@ -14,12 +14,6 @@ namespace http_console
             var inputInfo = await myHttpRepuest.InputInfomation(clientMode);
             Console.WriteLine(inputInfo);
 
-            // Get or Post?
-            // URL
-            // ID
-            // Pass
-            // Postの場合JSON
-
         }
 
 
