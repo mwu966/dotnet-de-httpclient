@@ -1,29 +1,24 @@
 ﻿using System;
-using System.Net.Http;
-using System.Text;
 
 namespace http_console
 {
     class Program
     {
-       private static HttpClient httpClient = new HttpClient();
-        static async void Main(string[] args)
+
+        static async System.Threading.Tasks.Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Get or Post? ※Getは0､Postは1を入力");
+            var clientMode = Console.ReadLine();
 
-            string pass = "";
-            string id = "";
+            var myHttpRepuest = new MyHttpRepuest();
+            var inputInfo = await myHttpRepuest.InputInfomation(clientMode);
+            Console.WriteLine(inputInfo);
 
-            string base64str = Convert.ToBase64String(Encoding.UTF8.GetBytes(id + ":" + pass));
-
-            var content = new StringContent("");
-
-            content.Headers.Add(@"Authorization", @"Basic "+ base64str);
-
-
-            var postTest = await httpClient.PostAsync(@"test",content);
-
-            var getTest = await httpClient.GetAsync(@"test");            
+            // Get or Post?
+            // URL
+            // ID
+            // Pass
+            // Postの場合JSON
 
         }
 
